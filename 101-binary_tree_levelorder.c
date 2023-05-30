@@ -40,7 +40,7 @@ void current_level(const binary_tree_t *tree, void (*func)(int), int level)
 	}
 }
 /**
- * binary_tree_levelorder - a function that traversal a binary tree in level order
+ * binary_tree_levelorder - a function that traversal a tree in level order
  * @tree: the root node of the tree to traverse
  * @func: a function that call each node
  * Return: Void
