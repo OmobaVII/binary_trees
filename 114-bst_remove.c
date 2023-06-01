@@ -28,7 +28,7 @@ bst_t *bst_remove_help(bst_t *root)
  */
 bst_t *bst_remove(bst_t *root, int value)
 {
-	bst_t *tmp;
+	bst_t *tmp, *successor;
 
 	if (root == NULL)
 		return (root);
@@ -50,9 +50,9 @@ bst_t *bst_remove(bst_t *root, int value)
 			free(root);
 			return (tmp);
 		}
-		tmp = bst_remove_help(root->right);
-		root->n = tmp->n;
-		root->right = bst_remove(root->right, tmp->n);
+		successor = bst_remove_help(root->right);
+		root->n = successor->n;
+		root->right = bst_remove(root->right, successor->n);
 	}
 	return (root);
 }
