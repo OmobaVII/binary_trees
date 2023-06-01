@@ -9,7 +9,7 @@
 bst_t *array_to_bst(int *array, size_t size)
 {
 	bst_t *new;
-	size_t a;
+	size_t a = 0;
 
 	if (size == 0)
 		return (NULL);
