@@ -13,11 +13,12 @@ bst_t *bst_remove_help(bst_t *root)
 		return (NULL);
 	}
 
-	while (root->left != NULL)
+	if (root->left != NULL)
 	{
-		root = root->left;
+		return (bst_remove_help(root->left));
 	}
-	return (root);
+	else
+		return (root);
 }
 
 /**
@@ -31,7 +32,7 @@ bst_t *bst_remove(bst_t *root, int value)
 	bst_t *tmp, *successor;
 
 	if (root == NULL)
-		return (root);
+		return (NULL);
 	if (root->n > value)
 		root->left = bst_remove(root->left, value);
 	else if (root->n < value)
